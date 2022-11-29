@@ -77,10 +77,10 @@ public class DaoCliente {
 		PreparedStatement ps=null;
 		try {
 			ps=cx.conectar().prepareStatement("UPDATE Cliente SET domicilio=?, telefono=?, nombre=? WHERE idcliente=?");
-			ps.setInt(1, user.getIdcliente());
-			ps.setString(2, user.getDomicilio());
-			ps.setInt(3, user.getTelefono());
-			ps.setString(4, user.getNombre());
+			ps.setString(1, user.getDomicilio());
+			ps.setInt(2, user.getTelefono());
+			ps.setString(3, user.getNombre());
+			ps.setInt(4, user.getIdcliente());
 			ps.executeUpdate();
 			return true;
 		} catch (SQLException e) {
